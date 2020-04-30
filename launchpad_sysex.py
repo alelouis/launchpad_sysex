@@ -54,7 +54,7 @@ while True:
         if msg.type == 'note_on' and msg.velocity > 0:
             x, y = from_note_to_xy(msg.note) # Convert note from launchpad to XY
             rgb_hit = my_cmap(msg.velocity/127.0) # Convert velocity to RGB
-            modifier = np.ones((9, 9, 3) # Declare a modifier (a color layer)
+            modifier = np.ones((9, 9, 3)) # Declare a modifier (a color layer)
             ''' Set the color of the gaussian from the rgb hit and the gaussian kernel '''
             modifier[:, :, 0] = 127 * rgb_hit[0] * gkern
             modifier[:, :, 1] = 127 * rgb_hit[1] * gkern
